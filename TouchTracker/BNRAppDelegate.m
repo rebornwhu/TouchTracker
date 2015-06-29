@@ -6,17 +6,26 @@
 //  Copyright (c) 2015 Xiao Lu. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "BNRAppDelegate.h"
+#import "BNRDrawViewController.h"
 
-@interface AppDelegate ()
+@interface BNRAppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation BNRAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    BNRDrawViewController *dvc = [[BNRDrawViewController alloc] init];
+    self.window.rootViewController = dvc;
+    
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
